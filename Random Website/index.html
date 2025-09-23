@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exclusive Jacket Reveal • [Your Brand]</title>
+  <meta name="description" content="Exclusive limited-edition jacket — reveal site. Sign up for early access." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Home">YourBrand</a>
+      <nav aria-label="Social links">
+        <a href="#" aria-label="Instagram" class="social">IG</a>
+        <a href="#" aria-label="Twitter/X" class="social">X</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 id="hero-title" class="title">The Jacket — Limited Reveal</h1>
+          <p class="subtitle">Designed for creators. Built for comfort. Extremely limited.</p>
+
+          <div class="actions">
+            <button id="notifyBtn" class="btn primary" aria-haspopup="dialog">Notify Me</button>
+            <button id="viewBtn" class="btn ghost">View Details</button>
+          </div>
+
+          <ul class="features" aria-hidden="false">
+            <li><strong>Fabric:</strong> Premium shell with weather resistance</li>
+            <li><strong>Fit:</strong> Relaxed, tailored shoulders</li>
+            <li><strong>Edition:</strong> Limited run, numbered tags</li>
+          </ul>
+        </div>
+
+        <div class="hero-right">
+          <div class="mockup-stage" aria-hidden="true">
+            <img src="assets/jacket-front.png" alt="Jacket front mockup" class="mockup active" id="mockup-front">
+            <img src="assets/jacket-back.png"  alt="Jacket back mockup"  class="mockup" id="mockup-back">
+            <img src="assets/jacket-side.png"  alt="Jacket side mockup"  class="mockup" id="mockup-side">
+          </div>
+
+          <div class="mockup-controls" aria-hidden="true">
+            <button class="dot active" data-target="front" aria-label="Front view"></button>
+            <button class="dot" data-target="side" aria-label="Side view"></button>
+            <button class="dot" data-target="back" aria-label="Back view"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILS -->
+    <section class="details" id="details" aria-labelledby="details-title">
+      <div class="container">
+        <h2 id="details-title">Design & Specs</h2>
+        <div class="spec-grid">
+          <article>
+            <h3>Thoughtful design</h3>
+            <p>Every seam and pocket was considered to be functional and minimal — subtle branding, big presence.</p>
+          </article>
+          <article>
+            <h3>Materials</h3>
+            <p>Custom blended shell with breathable lining and reinforced stitching at stress points.</p>
+          </article>
+          <article>
+            <h3>Sizing</h3>
+            <p>Unisex sizes. Check our sizing guide (link placeholder) — tailored for layering.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN (optional) -->
+    <section class="countdown" aria-labelledby="countdown-title">
+      <div class="container">
+        <h2 id="countdown-title">Drop Countdown</h2>
+        <div class="countdown-grid" id="countdown">
+          <div><span id="days">00</span><small>days</small></div>
+          <div><span id="hours">00</span><small>hours</small></div>
+          <div><span id="mins">00</span><small>mins</small></div>
+          <div><span id="secs">00</span><small>secs</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNUP -->
+    <section class="signup" aria-labelledby="signup-title">
+      <div class="container signup-inner">
+        <div>
+          <h2 id="signup-title">Get Notified</h2>
+          <p>Enter your email for early access and updates — no spam, ever.</p>
+        </div>
+        <form id="signupForm" class="signup-form" onsubmit="return false;" novalidate>
+          <label for="email" class="sr-only">Email address</label>
+          <input id="email" type="email" placeholder="you@example.com" required autocomplete="email">
+          <button class="btn primary" type="submit">Notify Me</button>
+        </form>
+        <p id="signupMsg" class="signup-msg" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> YourBrand — Crafted with care</p>
+      <p class="muted">Made by [Your Name]. Replace assets/jacket-*.png with your mockups.</p>
+    </div>
+  </footer>
+
+  <!-- Modal dialog (notification) -->
+  <div id="notifyDialog" class="dialog" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="dialogTitle">
+    <div class="dialog-panel">
+      <button class="dialog-close" id="dialogClose" aria-label="Close">✕</button>
+      <h3 id="dialogTitle">Get early access</h3>
+      <p>Enter your email and we'll let you know when the reveal goes live.</p>
+      <form id="dialogForm" onsubmit="return false;" novalidate>
+        <input id="dialogEmail" type="email" placeholder="you@example.com" required>
+        <div class="dialog-actions">
+          <button type="submit" class="btn primary">Submit</button>
+          <button type="button" class="btn ghost" id="dialogCancel">Cancel</button>
+        </div>
+      </form>
+      <p id="dialogMsg" class="signup-msg" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
